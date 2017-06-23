@@ -7,6 +7,10 @@ UUID = "OGVIFL"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
+    #SNMP
+    config.vm.network "forwarded_port", guest: 161, host_ip: '127.0.0.1', host: 1161, protocol: 'udp', auto_correct: true
+    config.vm.network "forwarded_port", guest: 161, host_ip: '127.0.0.1', host: 1161, protocol: 'tcp', auto_correct: true
+
     config.ssh.insert_key = false
 
     (1..2).each do |id|

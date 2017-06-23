@@ -44,6 +44,11 @@ system {
         }
     }
 }
+
+snmp {
+    community public;
+}
+
 interfaces {
 
 {% for interface in interfaces %}
